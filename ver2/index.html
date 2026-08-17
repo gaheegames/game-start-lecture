@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>게임 분석과 평가 — 게임 개발 지망생을 위한 특강</title>
+<meta name="description" content="게임이란 무엇인가, 게임의 구성요소, 그리고 퍼블리셔가 실제로 쓰는 게임 평가 기준까지 — 게임 개발 지망생을 위한 특강 자료">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bgfx"></div>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="index.html">가히 <b>gahee</b><small>GAME LECTURE</small></a>
+    <div class="nav-links">
+      <a href="index.html" class="on">홈</a>
+      <a href="part1.html">PART 1 · 게임이란?</a>
+      <a href="part2.html">PART 2 · 구성요소</a>
+      <a href="part3.html">PART 3 · 실전 평가</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="chiprow" style="margin:0 0 22px">
+      <span class="chip hl">게임 개발 지망생 대상 특강</span>
+      <span class="chip">강의자료 기반 웹 아카이브</span>
+    </div>
+    <h1>게임 분석과 <span class="accent">평가</span></h1>
+    <p class="sub">
+      게임이란 무엇이고, 무엇으로 이루어져 있으며,<br>
+      퍼블리셔는 게임을 <b>실제로 어떤 기준으로</b> 평가하는가 —<br>
+      대학 게임학과 강의자료와 실무 평가양식을 한 페이지씩 정리했습니다.
+    </p>
+    <div class="chiprow">
+      <span class="chip">🎮 게임의 정의</span>
+      <span class="chip">🧩 규칙 · 동기 · 보상</span>
+      <span class="chip">📋 실무 평가양식 3종</span>
+      <span class="chip">📊 실제 평가 데이터</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 강연자 소개 ============ -->
+<section id="speaker">
+  <div class="wrap">
+    <div class="kicker">SPEAKER</div>
+    <h2>강연자 소개</h2>
+
+    <div class="grid g2 mt24" style="grid-template-columns:1fr 1.4fr;align-items:stretch">
+      <div class="card rv" style="text-align:center;display:flex;flex-direction:column;justify-content:center">
+        <img src="assets/img/speaker-caricature.jpg" alt="구현우 캐리커처" style="width:190px;border-radius:20px;margin:0 auto 18px;border:1px solid var(--line)">
+        <div style="font-size:26px;font-weight:900;letter-spacing:-.02em">구현우</div>
+        <p style="margin-top:6px">게임퍼블리셔 <b class="accent" style="font-weight:800">가히(gahee)</b> 대표<br>청강문화산업대학교 게임기획 겸임교수</p>
+        <div class="chiprow" style="justify-content:center;margin-top:16px">
+          <span class="chip hl">5번의 이직</span>
+          <span class="chip hl">2번의 창업</span>
+        </div>
+      </div>
+
+      <div class="card rv">
+        <h4 style="margin-bottom:16px">🕹️ CHARACTER STATUS</h4>
+        <div class="statbar">
+          <div class="lb"><b>게임업계 경력 18년차</b><span>LV.53 / 99</span></div>
+          <div class="tr"><div class="fl" data-w="53.5%"></div></div>
+        </div>
+        <div class="statbar">
+          <div class="lb"><b>게임콘텐츠 강의</b><span>LV.41 / 99</span></div>
+          <div class="tr"><div class="fl" data-w="41.4%"></div></div>
+        </div>
+        <ul class="tl mt24">
+          <li class="now"><b>게임퍼블리셔 가히 대표</b><span>+ 청강문화산업대학교 게임기획 겸임교수</span></li>
+          <li><b>㈜플렉시마인드 부사장</b></li>
+          <li><b>㈜컴투스 전략기획실 과장</b></li>
+          <li><b>㈜gumi Korea 글로벌 퍼블리싱매니저</b></li>
+          <li><b>한국콘텐츠진흥원 모바일센터</b></li>
+          <li><b>㈜앱바다 대표</b><span>창업</span></li>
+          <li><b>㈜위즈커뮤니케이션 is팀</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout mt24 rv">
+      <div class="tag">이 강의의 관점</div>
+      <p style="color:var(--tx)">
+        개발사에서 게임을 <b>만들고</b>, 퍼블리셔에서 게임을 <b>고르고 평가해 온</b> 두 가지 시선으로 —
+        "게임이란 무엇인가"라는 이론과 "이 게임에 투자할 것인가"라는 실무를 함께 다룹니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 커리큘럼 ============ -->
+<section id="curriculum">
+  <div class="wrap">
+    <div class="kicker">CURRICULUM</div>
+    <h2>오늘의 커리큘럼</h2>
+    <p class="lead">세 파트로 나눴습니다. 순서대로 읽어도 좋고, 궁금한 파트부터 봐도 됩니다.</p>
+
+    <div class="grid g3 mt32">
+      <a class="card rv" href="part1.html" style="transition:.25s" onmouseover="this.style.borderColor='rgba(34,211,238,.5)'" onmouseout="this.style.borderColor=''">
+        <div class="ico">🧠</div>
+        <div style="font-size:12px;font-weight:800;color:var(--cyan);letter-spacing:.1em">PART 1</div>
+        <h4 style="margin-top:6px">게임이란 무엇인가?</h4>
+        <p>인간의 욕구에서 출발하는 게임의 본질 — 매슬로우의 욕구 이론, 놀이의 의미, 그리고 공부와 게임의 차이.</p>
+        <p style="margin-top:14px;color:var(--cyan);font-weight:700;font-size:13.5px">읽으러 가기 →</p>
+      </a>
+      <a class="card rv" href="part2.html" style="transition:.25s" onmouseover="this.style.borderColor='rgba(139,92,246,.55)'" onmouseout="this.style.borderColor=''">
+        <div class="ico">🧩</div>
+        <div style="font-size:12px;font-weight:800;color:var(--violet);letter-spacing:.1em">PART 2</div>
+        <h4 style="margin-top:6px">게임의 구성요소</h4>
+        <p>규칙(Rule) · 동기(Motivation) · 보상(Reward). 주사위 게임 하나로 게임의 뼈대를 직접 조립해 봅니다.</p>
+        <p style="margin-top:14px;color:var(--violet);font-weight:700;font-size:13.5px">읽으러 가기 →</p>
+      </a>
+      <a class="card rv" href="part3.html" style="transition:.25s" onmouseover="this.style.borderColor='rgba(251,191,36,.5)'" onmouseout="this.style.borderColor=''">
+        <div class="ico">📋</div>
+        <div style="font-size:12px;font-weight:800;color:var(--gold);letter-spacing:.1em">PART 3</div>
+        <h4 style="margin-top:6px">퍼블리셔의 실전 게임 평가</h4>
+        <p>실무에서 쓰는 평가양식 3종을 공개합니다 — 요약평가서, 심화평가서, 그리고 소싱 검토 보고서까지.</p>
+        <p style="margin-top:14px;color:var(--gold);font-weight:700;font-size:13.5px">읽으러 가기 →</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 핵심 메시지 ============ -->
+<section id="core">
+  <div class="wrap">
+    <div class="kicker">3 KEY TAKEAWAYS</div>
+    <h2>미리 보는 결론 세 줄</h2>
+    <div class="grid g3 mt32">
+      <div class="card rv"><div class="big accent">01</div>
+        <p class="mt8" style="color:var(--tx);font-size:15px;font-weight:600">게임은 인간의 욕구를 충족시키는 놀이의 설계물이다.</p>
+      </div>
+      <div class="card rv"><div class="big accent">02</div>
+        <p class="mt8" style="color:var(--tx);font-size:15px;font-weight:600">규칙만으로는 게임이 되지 않는다 — 동기가 의미를, 보상이 이유를 만든다.</p>
+      </div>
+      <div class="card rv"><div class="big accent">03</div>
+        <p class="mt8" style="color:var(--tx);font-size:15px;font-weight:600">퍼블리셔는 재미(게임성)와 함께 시장성 · BM · 개발력을 숫자로 평가한다.</p>
+      </div>
+    </div>
+
+    <div class="quoteband rv">
+      <div class="q">"play is the highest form of research"</div>
+      <div class="by">— 강의 슬라이드 중에서</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-brand">가히 <b>gahee</b> · 게임 분석과 평가 특강</div>
+    <p>본 페이지는 구현우 강연자의 대학 게임학과 강의자료 및 퍼블리셔 실무 평가양식을 재구성한 교육 자료입니다.<br>
+    페이지에 인용된 게임 화면·이미지·상표는 각 권리자의 소유이며, 교육 목적으로만 사용되었습니다.</p>
+  </div>
+</footer>
+
+<script>
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// stat bars
+const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.style.width=e.target.dataset.w;io2.unobserve(e.target)}}),{threshold:.5});
+document.querySelectorAll('.fl').forEach(el=>io2.observe(el));
+</script>
+</body>
+</html>
