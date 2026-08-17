@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PART 2 · 게임의 구성요소 — 게임 분석과 평가</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bgfx"></div>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="index.html">가히 <b>gahee</b><small>GAME LECTURE</small></a>
+    <div class="nav-links">
+      <a href="index.html">홈</a>
+      <a href="part1.html">PART 1 · 게임이란?</a>
+      <a href="part2.html" class="on">PART 2 · 구성요소</a>
+      <a href="part3.html">PART 3 · 실전 평가</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">홈</a> / PART 2</div>
+    <h1>게임의 <span class="accent">구성요소</span></h1>
+    <p class="sub">재미있는 것을 발상하려면, 게임이 <b>무엇으로 이루어져 있는지</b> 알아야 합니다.<br>강의에서 제시하는 게임의 3대 구성요소입니다.</p>
+    <div class="chiprow">
+      <a class="chip hl" href="#rule">① 규칙 Rule</a>
+      <a class="chip hl" href="#motivation">② 동기 Motivation</a>
+      <a class="chip hl" href="#reward">③ 보상 Reward</a>
+      <a class="chip" href="#structure">+ 설계 문서로 보는 구조</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 3요소 오버뷰 ============ -->
+<section>
+  <div class="wrap">
+    <div class="grid g3">
+      <div class="card rv" style="border-color:rgba(34,211,238,.35)">
+        <div class="ico">📏</div><h4>규칙 <span style="color:var(--tx3)">Rule</span></h4>
+        <p>게임을 성립시키는 뼈대. 새로운 게임을 만든다는 것은 <b>새로운 규칙을 만드는 것</b>.</p>
+      </div>
+      <div class="card rv" style="border-color:rgba(139,92,246,.4)">
+        <div class="ico">💜</div><h4>동기 <span style="color:var(--tx3)">Motivation</span></h4>
+        <p>이 게임을 계속해야 하는 <b>감성적 이유</b>. 동기가 있어야 규칙이 의미를 갖는다.</p>
+      </div>
+      <div class="card rv" style="border-color:rgba(251,191,36,.35)">
+        <div class="ico">🏆</div><h4>보상 <span style="color:var(--tx3)">Reward</span></h4>
+        <p>게임 기획에서 <b>가장 중요한 것</b>. 눈에 보이는 보상과 보이지 않는 보상이 있다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ① 규칙 ============ -->
+<section id="rule">
+  <div class="wrap">
+    <div class="kicker">ELEMENT ① RULE</div>
+    <h2>첫 번째, 규칙</h2>
+    <div class="grid g2 mt24" style="align-items:center">
+      <figure class="frame rv">
+        <img src="assets/img/rules-board.jpg" alt="칠판에 분필로 쓴 RULES">
+      </figure>
+      <div class="rv">
+        <p class="lead" style="max-width:none;font-size:20px;font-weight:700;color:var(--tx)">
+          "새로운 게임을 만든다는 것은<br><span class="accent">새로운 규칙을 만드는 것</span>"
+        </p>
+        <p class="lead mt16" style="max-width:none">장르가 무엇이든 마찬가지입니다. 아래 세 게임의 공통점은 단 하나 — 저마다 고유한 규칙을 발명했다는 것입니다.</p>
+      </div>
+    </div>
+
+    <div class="grid g3 mt24">
+      <figure class="frame rv"><img src="assets/img/game-lol.jpg" alt="리그 오브 레전드 로고"><figcaption><b>리그 오브 레전드</b> — 5v5 넙서스 파괴라는 규칙</figcaption></figure>
+      <figure class="frame rv"><img src="assets/img/game-pubg.jpg" alt="배틀그라운드 키아트"><figcaption><b>배틀그라운드</b> — 좁아지는 자기장, 최후의 1인</figcaption></figure>
+      <figure class="frame rv"><img src="assets/img/game-adofai.jpg" alt="얼음과 불의 춤 타이틀 아트"><figcaption><b>A Dance of Fire and Ice</b> — 두 행성의 굤도 리듬</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 주사위 실습 ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker">WORKSHOP</div>
+    <h2>실습 — 주사위 게임의 규칙을 만들어 봅시다</h2>
+    <div class="grid g2 mt24" style="align-items:center">
+      <figure class="frame rv">
+        <img src="assets/img/dice-intro.jpg" alt="영화 속 주사위 도박 장면 — 친치로">
+        <figcaption>영화 속 그 장면 — 실은 '친치로'라는 도박입니다. 컵 속 주사위 두 개, <b>합이 높은 사람이 이기는 게임</b>.</figcaption>
+      </figure>
+      <div class="rv">
+        <p class="lead" style="max-width:none">
+          "주사위 합이 높은 쪽이 승리" — 한 줄이면 끝날 것 같지만, 실제로 플레이해 보면 규칙엔 계속 구멍이 발견됩니다.<br><br>
+          버튼을 눌러 구멍을 하나씩 메워 보세요.
+        </p>
+      </div>
+    </div>
+
+    <div class="demo mt24 rv">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px">
+        <h4 style="font-size:16px">🎲 주사위 게임 규칙서 <span id="ruleCount" style="color:var(--cyan)">(3 / 9)</span></h4>
+        <div style="display:flex;gap:8px">
+          <button class="btn pri" id="addRule">규칙의 구멍 메우기</button>
+          <button class="btn ghost" id="resetRule">처음부터</button>
+        </div>
+      </div>
+      <p id="ruleQ" style="font-size:14.5px;color:var(--gold);font-weight:700;min-height:24px;margin-bottom:12px">Q. 이대로 게임을 시작해도 될까요?</p>
+      <ol class="rulelist" id="ruleList">
+        <li class="show">플레이어 A가 주사위를 굴린다.</li>
+        <li class="show">플레이어 B가 주사위를 굴린다.</li>
+        <li class="show">주사위의 합이 높은 쪽이 이긴다.</li>
+        <li>주사위의 합이 같으면 다시 굴린다.</li>
+        <li>3회까지 굴렸는데도 같으면 비긴 것으로 한다.</li>
+        <li class="ex">주사위가 테이블 아래로 떨어지면 무효 처리한다.</li>
+        <li class="ex">2회 연속 무효인 경우 실격 처리한다.</li>
+        <li class="ex">컵을 들어 올릴 때 주사위에 부딪치면 실격 처리한다.</li>
+        <li class="ex">주사위가 부서지는 경우 실격 처리한다.</li>
+      </ol>
+    </div>
+
+    <div class="callout warn mt24 rv">
+      <div class="tag">규칙의 함정</div>
+      <p style="color:var(--tx)">
+        규칙은 게임 기획의 핵심이고, 정교함과 완전함을 목표로 해야 합니다. 기본적으로 <b>규칙이 재미있어야 게임이 재미있습니다.</b><br><br>
+        그래서 생기는 함정 — <b>"규칙이 기획의 전부"라는 착각</b>입니다. 초보 기획자, 프로그래머 출신 기획자에게 흔한 경향입니다.
+      </p>
+    </div>
+
+    <div class="grid g2 mt24" style="align-items:center">
+      <figure class="frame rv">
+        <img src="assets/img/rule-trap.jpg" alt="우리가 바랐던 모습 vs 현실 — 관객 시점 비교 슬라이드">
+        <figcaption>"격렬한 경쟁으로 우승자를 가리는 게임"을 만들었더니 — 기대(왼쪽)와 현실(오른쪽)</figcaption>
+      </figure>
+      <div class="rv">
+        <p class="lead" style="max-width:none">
+          규칙의 설계자인 기획자는 플레이어보다 <b style="color:var(--gold)">관객의 시점</b>에 몰입하기 쉽습니다.<br><br>
+          내 눈에 극적인 구도가, 정작 <b style="color:var(--tx)">그 안에서 뛰는 플레이어</b>에게는 소모적인 경험일 수 있다는 것 — 규칙을 설계할 때 반드시 기억해야 할 오류입니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ② 동기 ============ -->
+<section id="motivation">
+  <div class="wrap">
+    <div class="kicker">ELEMENT ② MOTIVATION</div>
+    <h2>두 번째, 동기</h2>
+    <div class="grid g2 mt24">
+      <div class="card rv">
+        <h4>MOTIVATION의 어원</h4>
+        <p style="font-size:22px;margin-top:10px"><b style="color:var(--cyan)">movere</b> <span style="color:var(--tx3)">(라틴어)</span> → <b>to move</b></p>
+        <p class="mt8">움직이다, 움직이게 만들다.<br>동기란 <b style="color:var(--tx)">목표 달성을 위한 자발적인 행동</b>의 원천입니다.</p>
+      </div>
+      <div class="card rv">
+        <h4>게임에서의 동기란</h4>
+        <p class="mt8">이 게임을 계속해야 하는 <b style="color:var(--tx)">감성적 이유</b>입니다.<br><br>
+        동기가 있어야 규칙은 의미를 갖습니다. 룰만 있는 게임은 <b style="color:var(--violet)">수학 연습문제 풀이</b>와 크게 다르지 않습니다.</p>
+      </div>
+    </div>
+
+    <h3 class="mt48">실험 — 같은 규칙, 다른 동기</h3>
+    <p class="lead">강의의 하이라이트입니다. 아래 두 게임은 <b>완전히 같은 규칙</b>입니다. 직접 플레이해 보세요.</p>
+
+    <div class="grid g2 mt24" style="align-items:stretch">
+      <!-- 실험 A -->
+      <div class="demo rv" style="display:flex;flex-direction:column">
+        <h4 style="font-size:15px;color:var(--tx3)">실험 A · 그냥 숫자</h4>
+        <p style="font-size:13.5px;color:var(--tx3);margin-top:4px">여기에 숫자가 있습니다. 주사위를 굴려 나온 만큼 뻔니다. 0 이하가 되면 승리합니다.</p>
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:18px 0">
+          <div id="numA" style="font-size:84px;font-weight:900;letter-spacing:-.04em">10</div>
+        </div>
+        <button class="btn ghost" id="rollA" style="width:100%;justify-content:center">🎲 주사위 굴리기</button>
+        <div class="dlog" id="logA"><p class="sys">주사위를 굴려 보세요.</p></div>
+      </div>
+      <!-- 실험 B -->
+      <div class="demo rv" style="display:flex;flex-direction:column;border-color:rgba(139,92,246,.45)">
+        <h4 style="font-size:15px;color:var(--violet)">실험 B · 오크 전사</h4>
+        <p style="font-size:13.5px;color:var(--tx3);margin-top:4px">오크 전사가 나타났다! 생명력은 10. 당신의 아이언 롱소드 공격력은 1–6입니다.</p>
+        <div style="padding:14px 0;display:flex;gap:14px;align-items:center">
+          <img id="orcImg" src="assets/img/orc.jpg" alt="오크 전사" style="width:104px;border-radius:14px;border:1px solid var(--line)">
+          <div style="flex:1">
+            <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:6px"><span>오크 전사</span><span id="hpTxt">HP 10 / 10</span></div>
+            <div class="hpbar"><div class="hp" id="hpB" style="width:100%"></div></div>
+          </div>
+        </div>
+        <button class="btn pri" id="rollB" style="width:100%;justify-content:center">⚔️ 아이언 롱소드로 공격!</button>
+        <div class="dlog" id="logB"><p class="sys">오크 전사가 당신을 노려보고 있다…</p></div>
+      </div>
+    </div>
+
+    <div class="callout mt24 rv">
+      <div class="tag">무엇이 달랐나</div>
+      <p style="color:var(--tx)">
+        아무 의미 없던 숫자에 <b>"이것이 몬스터의 남은 생명력이다"</b>라는 메타포를 붙여 의미를 만들었습니다.
+        플레이어는 이제 이 게임을 해야 할 <b style="color:var(--violet)">감성적인 동기</b>를 얻었습니다.<br><br>
+        룰만으로는 게임이 성립하지 않습니다. <b>창조적인 룰만큼, 창조적인 동기가 필요합니다.</b>
+      </p>
+    </div>
+
+    <div class="grid g2 mt24" style="align-items:start">
+      <figure class="frame rv">
+        <img src="assets/img/wow-log.jpg" alt="월드 오브 워크래프트 전투 로그">
+        <figcaption>WoW의 전투 로그 — <b>"이 게임과 주사위 굴려서 10에서 숫자 빼는 게임은 규칙이 같은 게임입니다"</b> (©Blizzard Entertainment)</figcaption>
+      </figure>
+      <figure class="frame rv">
+        <img src="assets/img/tlou.jpg" alt="The Last of Us 커버 아트">
+        <figcaption>가장 강력한 동기 중 하나는 <b>스토리</b>입니다 — The Last of Us (©Naughty Dog)</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ③ 보상 ============ -->
+<section id="reward">
+  <div class="wrap">
+    <div class="kicker">ELEMENT ③ REWARD</div>
+    <h2>세 번째, 보상</h2>
+
+    <div class="quoteband rv" style="margin-top:24px">
+      <div class="q">게임 기획을 할 때 가장 중요한 것은,<br>바로 <span class="accent">보상</span>입니다</div>
+    </div>
+
+    <div class="grid g2 mt24" style="align-items:center">
+      <div class="rv">
+        <h3>가위바위보는 재미있나요?</h3>
+        <p class="lead" style="max-width:none">
+          글쎄요. 그런데 규칙은 그대로 두고 이렇게 바꿔 봅시다.<br><br>
+          · 진 사람이 이긴 사람에게 <b style="color:var(--tx)">"대단한데!"</b>라고 말해주기 → 음…?<br>
+          · 진 사람이 이긴 사람에게 <b style="color:var(--gold)">1만 원</b> 주기<br>
+          · 진 사람이 <b style="color:var(--gold)">비밀 이야기</b> 하나 해주기<br>
+          · 진 사람이 <b style="color:var(--gold)">소개팅</b> 한 번 주선해 주기<br><br>
+          갑자기 진지해지지 않나요? <b style="color:var(--tx)">보상이 게임의 온도를 바꿉니다.</b>
+        </p>
+      </div>
+      <figure class="frame rv" style="max-width:340px;margin:0 auto">
+        <img src="assets/img/rsp-trap-card.jpg" alt="운명의 가위바위보 함정카드 밈">
+        <figcaption>운명의 가위바위보 [함정 카드]</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="mt48">눈에 보이는 보상</h3>
+    <div class="grid g3 mt16">
+      <figure class="frame rv">
+        <img src="assets/img/galaga.png" alt="갤러그 타이틀 화면과 하이스코어">
+        <figcaption><b>하이 스코어</b> — 플레이 자체가 보상인 아케이드 게임조차 스코어라는 보상을 남겼습니다 (Galaga, ©NAMCO)</figcaption>
+      </figure>
+      <figure class="frame rv">
+        <img src="assets/img/final-fight.jpg" alt="파이널 파이트 엔딩 장면">
+        <figcaption><b>엔딩</b> — 스토리의 완결이자, 그 자체가 보상 (Final Fight, ©CAPCOM)</figcaption>
+      </figure>
+      <figure class="frame rv">
+        <img src="assets/img/quest-reward.jpg" alt="MMORPG 퀘스트 완료 보상 창">
+        <figcaption><b>레벨 · 장비 · 재화</b> — 개발자가 화면에 드러내 놓는 보상들</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="mt48">눈에 보이지 않는 보상</h3>
+    <p class="lead">그런데 보상에는 화면에 표시되지 않는 종류도 있습니다. 명작을 가르는 것은 대개 이쪽입니다.</p>
+
+    <div class="grid g2 mt24" style="align-items:start">
+      <figure class="frame rv">
+        <img src="assets/img/mabinogi.jpg" alt="마비노기 모닥불 스크린샷">
+        <figcaption>"저는 걸 수다 떨는 게 좋아서 이 게임 해요" — <b>사회적 보상</b> (마비노기, ©NEXON)</figcaption>
+      </figure>
+      <div class="card rv">
+        <h4>WoW의 방대한 세계관, 사람들은 읽을까?</h4>
+        <p class="mt8">강의에서 던진 질문입니다. 답은 — <b style="color:var(--tx)">"별로 읽지 않습니다."</b> 그런데 블리자드는 왜 그 많은 인력으로 퀘스트 대사를 쓰고 번역할까요?</p>
+        <div style="display:flex;gap:14px;align-items:center;margin-top:16px">
+          <img src="assets/img/kaplan.jpg" alt="제프리 카플란" style="width:74px;border-radius:12px">
+          <p style="font-size:13.5px"><b style="color:var(--tx)">"플레이어들이 긴 글을 읽지 않는다는 것은 잘 알고 있습니다."</b><br><span style="color:var(--tx3)">— 제프리 카플란 (전 WoW 디렉터), GDC 2009</span></p>
+        </div>
+        <p class="mt16">잘 짜인 세계관은 <b style="color:var(--cyan)">존재하는 것만으로도</b> 플레이어에게 "나는 수준 높은 게임을 하고 있다"는 <b>고양감과 자부심</b>을 줍니다. 반대로 부실한 스토리는 그 자부심을 깎아 먹습니다.</p>
+      </div>
+    </div>
+
+    <div class="grid g3 mt24">
+      <figure class="frame rv">
+        <img src="assets/img/gandhi.jpg" alt="문명 시리즈의 간디">
+        <figcaption><b>지적인 만족감</b> — 문명 시리즈를 플레이하며 느끼는 보이지 않는 보상 (©2K)</figcaption>
+      </figure>
+      <figure class="frame rv">
+        <img src="assets/img/dog-blanket.jpg" alt="이불을 뒤집어쓴 강아지">
+        <figcaption><b>안도감</b> — 공포 영화를 볼 때 이불을 뒤집어쓰는 이유와 같은 원리</figcaption>
+      </figure>
+      <figure class="frame rv">
+        <img src="assets/img/toolbox-book.jpg" alt="오래된 연장통 책 표지와 조망과 피신 이론 인용">
+        <figcaption><b>조망과 피신 이론</b> — "인간은 들키지 않고 내다볼 수 있는 곳을 선호하도록 진화했다" (제이 애플턴, 『오래된 연장통』 소개 슬라이드)</figcaption>
+      </figure>
+    </div>
+
+    <figure class="frame mt24 rv" style="max-width:760px;margin-left:auto;margin-right:auto">
+      <img src="assets/img/manga-safety.jpg" alt="안전하다는 사실에 대한 쾌감 — 만화 장면">
+      <figcaption>"<b>「안전」하다는 사실에 대한 쾌감…!</b>" — 위험을 구경하는 자의 안도감을 그린 만화의 한 장면 (강의 인용 컷)</figcaption>
+    </figure>
+
+    <div class="card mt32 rv" style="border-color:rgba(251,191,36,.35)">
+      <h4>정리 — 보이지 않는 보상의 종류</h4>
+      <div class="chiprow mt8">
+        <span class="chip hl">고양감과 자부심</span>
+        <span class="chip hl">안도감</span>
+        <span class="chip hl">소속감</span>
+        <span class="chip hl">지적인 만족감</span>
+        <span class="chip hl">예술적 감흥</span>
+        <span class="chip">기타 등등…</span>
+      </div>
+      <p class="mt16" style="color:var(--tx);font-weight:700">명작이라 꼽히는 게임들은, 대개 보이지 않는 보상에 충실합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 설계 구조 ============ -->
+<section id="structure">
+  <div class="wrap">
+    <div class="kicker">FROM CONCEPT TO DOCUMENT</div>
+    <h2>구성요소는 어떻게 문서가 되는가</h2>
+    <p class="lead">규칙 · 동기 · 보상이 실제 기획 문서에서 어떤 모습으로 구체화되는지 — 강의에서 소개한 실제 설계 자료들입니다.</p>
+
+    <div class="grid g2 mt32">
+      <figure class="frame rv">
+        <img src="assets/img/flow-basic.png" alt="게임의 기본 플로우차트 — 스테이지 선택, 성공/실패 분기, 보상, 업그레이드 순환">
+        <figcaption><b>기본 플로우차트</b> — 도전 → 성공/실패 → 보상 → 성장 → 재도전의 순환 구조</figcaption>
+      </figure>
+      <figure class="frame rv">
+        <img src="assets/img/flow-screens.png" alt="실제 게임 화면 8장으로 표현한 화면 전환 흐름도">
+        <figcaption><b>화면 흐름</b> — 타이틀 → 로비 → 로딩 → 플레이 → 보상, 그리고 상점 분기</figcaption>
+      </figure>
+      <figure class="frame rv">
+        <img src="assets/img/ui-annotated.jpg" alt="인게임 화면에 UI 요소를 주석으로 표시한 자료">
+        <figcaption><b>인게임 화면 해부</b> — 주인공 · 적 · 장애물 · 제한시간 · 코인 · 컨트롤 버튼</figcaption>
+      </figure>
+      <figure class="frame rv">
+        <img src="assets/img/state-machine.png" alt="캐릭터 상태 전이도 — Normal, Critical, Dead">
+        <figcaption><b>캐릭터 상태 전이도</b> — Normal ↔ Critical ↔ Dead, 조건과 이벤트의 설계</figcaption>
+      </figure>
+      <figure class="frame rv">
+        <img src="assets/img/table-stage.png" alt="스테이지 밸런스 테이블 엑셀 화면">
+        <figcaption><b>스테이지 테이블</b> — 스테이지별 미션 · 보상 금액 · 제한시간 · 난이도 파라미터</figcaption>
+      </figure>
+      <figure class="frame rv">
+        <img src="assets/img/table-items.png" alt="아이템 테이블 엑셀 화면">
+        <figcaption><b>아이템 테이블</b> — 아이템별 태그 · 효과 · 적용 시간 정의</figcaption>
+      </figure>
+    </div>
+    <p class="mt16" style="font-size:12.5px;color:var(--tx3)">위 6개 자료 이미지 출처: m.blog.naver.com (blogId: wlhermit) — 강의 슬라이드 표기 기준</p>
+
+    <figure class="frame mt24 rv">
+      <img src="assets/img/rpg-loop.png" alt="RPG의 일반적 구조 — 게임플레이, 전리품, 강화의 순환 다이어그램">
+      <figcaption><b>RPG의 일반적 구조</b> — 플레이(스테이지·웨이브·대전)로 전리품을 얻고, 아이템·스킬·캐릭터를 강화해 다시 플레이로 돌아오는 큰 순환. 규칙 · 동기 · 보상이 하나의 루프에 담겨 있습니다</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 정리 ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker">SUMMARY</div>
+    <h2>PART 2 정리</h2>
+    <div class="grid g3 mt24">
+      <div class="card rv"><div class="big" style="color:var(--cyan)">규칙</div><p class="mt8" style="color:var(--tx);font-weight:600">게임의 뼈대. 정교하고 완전해야 하지만, 규칙이 전부라는 착각은 함정이다.</p></div>
+      <div class="card rv"><div class="big" style="color:var(--violet)">동기</div><p class="mt8" style="color:var(--tx);font-weight:600">메타포가 숫자에 의미를 입힌다. 같은 규칙도 동기가 있어야 게임이 된다.</p></div>
+      <div class="card rv"><div class="big" style="color:var(--gold)">보상</div><p class="mt8" style="color:var(--tx);font-weight:600">기획의 최우선. 보이는 보상 위에, 명작을 만드는 보이지 않는 보상이 있다.</p></div>
+    </div>
+
+    <div class="pager">
+      <a href="part1.html"><div class="dir">← PREV</div><div class="ttl">PART 1 · 게임이란 무엇인가?</div></a>
+      <a href="part3.html" class="next"><div class="dir">NEXT →</div><div class="ttl">PART 3 · 퍼블리셔의 실전 게임 평가</div></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-brand">가히 <b>gahee</b> · 게임 분석과 평가 특강</div>
+    <p>본 페이지는 구현우 강연자의 대학 게임학과 강의자료를 재구성한 교육 자료입니다.<br>
+    페이지에 인용된 게임 화면·이미지·상표(League of Legends, PUBG, WoW, The Last of Us, Galaga, Final Fight, 마비노기, Civilization 등)는 각 권리자의 소유이며, 교육 목적으로만 사용되었습니다.</p>
+  </div>
+</footer>
+
+<script>
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// ---- rule builder ----
+const steps=[
+  {q:"Q. 굴렸는데 동점이면 어떻게 하죠?",n:1},
+  {q:"Q. 다시 굴렸는데 또 동점이면요?",n:1},
+  {q:"Q. 주사위가 테이블 밖으로 떨어졌습니다. 판정은? (예외 상황들)",n:4},
+];
+let sIdx=0;
+const items=[...document.querySelectorAll('#ruleList li')];
+let shown=3;
+const addBtn=document.getElementById('addRule'), resetBtn=document.getElementById('resetRule');
+const ruleQ=document.getElementById('ruleQ'), ruleCount=document.getElementById('ruleCount');
+function upd(){ruleCount.textContent=`(${shown} / 9)`;}
+addBtn.onclick=()=>{
+  if(sIdx>=steps.length) return;
+  const st=steps[sIdx];
+  for(let i=0;i<st.n;i++){items[shown].classList.add('show');shown++;}
+  sIdx++;
+  if(sIdx<steps.length){ruleQ.textContent=steps[sIdx].q;}
+  else{ruleQ.textContent="이제야 게임이 '운영 가능한' 상태가 됐습니다. 규칙 설계란 구멍을 미리 발견하는 일입니다.";ruleQ.style.color="var(--cyan)";addBtn.disabled=true;}
+  upd();
+};
+ruleQ.textContent=steps[0].q;
+resetBtn.onclick=()=>{
+  shown=3;sIdx=0;items.forEach((li,i)=>{if(i>=3)li.classList.remove('show')});
+  ruleQ.textContent=steps[0].q;ruleQ.style.color="var(--gold)";addBtn.disabled=false;upd();
+};
+upd();
+
+// ---- experiment A ----
+let numA=10;
+const numAEl=document.getElementById('numA'), logA=document.getElementById('logA'), rollABtn=document.getElementById('rollA');
+function log(el,html){const p=document.createElement('p');p.innerHTML=html;el.appendChild(p);el.scrollTop=el.scrollHeight;}
+function rollAInit(){rollABtn.onclick=()=>{
+  if(numA<=0)return;
+  const d=1+Math.floor(Math.random()*6);
+  numA-=d;numAEl.textContent=numA;
+  log(logA,`주사위: <b>${d}</b> → <b>${numA}</b>`);
+  if(numA<=0){log(logA,`<span class="win">게임 끝. 당신의 승리입니다.</span>`);log(logA,`<span class="sys">…뭐야 이게.</span>`);rollABtn.textContent="🔄 다시 하기";rollABtn.onclick=()=>{numA=10;numAEl.textContent=10;logA.innerHTML='<p class="sys">주사위를 굴려 보세요.</p>';rollABtn.textContent="🎲 주사위 굴리기";rollAInit();};}
+};}
+rollAInit();
+
+// ---- experiment B ----
+let hp=10;
+const hpB=document.getElementById('hpB'), hpTxt=document.getElementById('hpTxt'), logB=document.getElementById('logB'), rollBBtn=document.getElementById('rollB'), orcImg=document.getElementById('orcImg');
+function bindB(){rollBBtn.onclick=()=>{
+  if(hp<=0)return;
+  const d=1+Math.floor(Math.random()*6);
+  hp=Math.max(0,hp-d);
+  hpB.style.width=(hp*10)+"%";
+  if(hp<=3)hpB.style.background="linear-gradient(90deg,#f87171,#fb923c)";
+  hpTxt.textContent=`HP ${hp} / 10`;
+  orcImg.classList.remove('flashred');void orcImg.offsetWidth;orcImg.classList.add('flashred');
+  logB.parentElement.classList.remove('shake');void logB.offsetWidth;
+  log(logB,`<span class="hitfx">⚔️ 오크 전사에게 ${d}의 피해!</span>`);
+  if(hp<=0){
+    log(logB,`<span class="win">🏆 오크 전사를 물리쳤다!</span>`);
+    log(logB,`<span class="sys">…같은 규칙인데, 이상하게 이쪽은 한 번 더 하고 싶지 않나요?</span>`);
+    orcImg.style.filter="grayscale(1) brightness(.6)";
+    rollBBtn.textContent="🔄 오크 전사가 다시 나타났다!";
+    rollBBtn.onclick=()=>{hp=10;hpB.style.width="100%";hpB.style.background="";hpTxt.textContent="HP 10 / 10";orcImg.style.filter="";logB.innerHTML='<p class="sys">오크 전사가 당신을 노려보고 있다…</p>';rollBBtn.textContent="⚔️ 아이언 롱소드로 공격!";bindB();};
+  }
+};}
+bindB();
+</script>
+</body>
+</html>
