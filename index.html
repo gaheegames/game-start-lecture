@@ -2,116 +2,65 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="게임 개발 지망생을 위한 게임 구조와 퍼블리싱 실무 평가 강의">
-  <title>게임을 만들기 전에, 게임을 보는 법</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="게임 개발 지망생을 위한 게임 구조와 퍼블리싱 평가 강의">
+  <title>게임을 보는 법 | GAME VIEW</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <nav class="site-nav" aria-label="주요 메뉴">
-      <a class="brand" href="index.html"><span class="brand-mark">G</span><span>GAME VIEW</span></a>
-      <div class="nav-links">
+  <a class="skip" href="#main">본문 바로가기</a>
+  <header class="topbar">
+    <nav class="nav" aria-label="주요 메뉴">
+      <a class="logo" href="index.html"><b>G</b><span>GAME VIEW</span></a>
+      <div class="menu">
         <a href="index.html" aria-current="page">시작</a>
-        <a href="game.html">게임의 구조</a>
-        <a href="evaluation.html">퍼블리셔 평가</a>
+        <a href="game.html">게임</a>
+        <a href="rule.html">규칙</a>
+        <a href="motivation.html">동기</a>
+        <a href="reward.html">보상</a>
+        <a href="evaluation.html">평가</a>
       </div>
     </nav>
   </header>
 
   <main id="main">
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-copy reveal">
+    <section class="cover">
+      <div class="cover-inner">
+        <div>
           <p class="eyebrow">GAME DESIGN × PUBLISHING</p>
           <h1>게임을<br>보는 법</h1>
-          <p class="hero-lede">재미를 감으로 설명하지 않고, <strong>규칙·동기·보상</strong>과 사업 가능성의 구조로 읽습니다.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="game.html">게임 구조부터 보기</a>
-            <a class="button button-ghost" href="evaluation.html">실무 평가 기준 보기</a>
-          </div>
+          <p class="cover-lede">플레이어를 움직이는 구조와<br>회사가 확인하는 가능성</p>
         </div>
-        <div class="hero-visual reveal">
-          <img class="hero-image" src="assets/game-anatomy.png" alt="주인공, 적, 장애물, 제한시간, 조작 버튼, 코인으로 구성된 게임 화면">
-          <span class="visual-caption">화면을 보면 구조가 보여야 합니다</span>
-        </div>
-      </div>
-    </section>
-
-    <div class="chapter-strip">
-      <div class="chapter-strip-inner">
-        <a href="game.html#rule"><small>01</small>규칙</a>
-        <a href="game.html#motivation"><small>02</small>동기</a>
-        <a href="game.html#reward"><small>03</small>보상</a>
-      </div>
-    </div>
-
-    <section class="section section-white">
-      <div class="section-inner speaker-grid">
-        <img class="speaker-photo reveal" src="assets/speaker.jpg" alt="강연자 구현우 캐리커처">
-        <div class="reveal">
-          <p class="section-kicker">SPEAKER</p>
-          <h2 class="speaker-name">구현우</h2>
-          <p class="speaker-role">게임 개발 · 퍼블리싱 · 교육 현장을 모두 경험한 실무자</p>
-          <p class="section-summary">개발자의 언어와 퍼블리셔의 언어 사이에서, 게임이 실제로 어떻게 판단되는지 설명합니다.</p>
-          <div class="stat-row" aria-label="강연자 경력 요약">
-            <div class="stat"><strong>18년</strong><span>게임 업계 경험</span></div>
-            <div class="stat"><strong>5회</strong><span>이직을 통한 현장 경험</span></div>
-            <div class="stat"><strong>2회</strong><span>창업 경험</span></div>
+        <div class="cover-visual" aria-label="규칙, 동기, 보상의 순환 구조">
+          <div class="orbit">
+            <div class="orbit-center">플레이</div>
+            <span class="orbit-word rule">규칙</span>
+            <span class="orbit-word motive">동기</span>
+            <span class="orbit-word reward">보상</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-heading reveal">
-          <div>
-            <p class="section-kicker">LECTURE MAP</p>
-            <h2>두 개의 시선으로 봅니다</h2>
+    <section class="speaker">
+      <div class="speaker-inner">
+        <img class="speaker-photo" src="assets/speaker.jpg" alt="강의자 구현우 캐릭터">
+        <div>
+          <p class="kicker">LECTURER</p>
+          <h2>구현우</h2>
+          <p class="speaker-role">게임 개발과 퍼블리싱 현장을 모두 경험한 실무자</p>
+          <div class="career-line" aria-label="강의자 경험 분야">
+            <div><strong>개발</strong><span>게임 제작과 조직 운영</span></div>
+            <div><strong>사업</strong><span>소싱과 퍼블리싱 검토</span></div>
+            <div><strong>교육</strong><span>대학 강의와 창업 경험</span></div>
           </div>
-          <p class="section-summary">만드는 사람은 재미의 원인을 알아야 하고, 선택하는 사람은 출시 가능성의 증거를 확인해야 합니다.</p>
-        </div>
-        <div class="route-grid">
-          <a class="route-card reveal" href="game.html">
-            <span class="route-number">01</span>
-            <h3>게임은 왜<br>계속하게 되는가</h3>
-            <p>규칙이 행동을 만들고, 동기가 의미를 만들며, 보상이 반복을 만듭니다.</p>
-          </a>
-          <a class="route-card reveal" href="evaluation.html">
-            <span class="route-number">02</span>
-            <h3>회사는 무엇을<br>확인하는가</h3>
-            <p>게임성만 보지 않습니다. 시장성, 확장성, 안정성, 개발 실행력까지 함께 봅니다.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-red">
-      <div class="section-inner reveal">
-        <p class="section-kicker">ONE SENTENCE</p>
-        <p class="big-quote">좋은 게임은 기능이 많은 게임이 아니라,<br><em>플레이할 이유가 끊기지 않는 게임</em>입니다.</p>
-      </div>
-    </section>
-
-    <section class="section section-white">
-      <div class="section-inner">
-        <div class="cta reveal">
-          <div>
-            <h2>첫 번째 장:<br>게임의 구조</h2>
-            <p>게임 화면을 분해하고, 주사위 규칙이 동기와 보상으로 확장되는 과정을 따라갑니다.</p>
-          </div>
-          <a class="button button-primary" href="game.html">다음 장으로</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner"><strong>GAME VIEW</strong><span>© <span data-year></span> 구현우</span></div>
-  </footer>
+  <footer class="footer"><div class="footer-inner"><strong>GAME VIEW</strong><span>© <span data-year></span> 구현우</span></div></footer>
   <script src="site.js"></script>
 </body>
 </html>
