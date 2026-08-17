@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PART 3 · 퍼블리셔의 실전 게임 평가 — 게임 분석과 평가</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="bgfx"></div>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="index.html">가히 <b>gahee</b><small>GAME LECTURE</small></a>
+    <div class="nav-links">
+      <a href="index.html">홈</a>
+      <a href="part1.html">PART 1 · 게임이란?</a>
+      <a href="part2.html">PART 2 · 구성요소</a>
+      <a href="part3.html" class="on">PART 3 · 실전 평가</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">홈</a> / PART 3</div>
+    <h1>퍼블리셔의 <span class="accent">실전 게임 평가</span></h1>
+    <p class="sub">
+      여기서부터는 이론이 아니라 <b>실무</b>입니다.<br>
+      퍼블리셔에서 게임을 소싱·평가할 때 실제로 사용해 온 평가양식 3종의 내용을 발췌해 정리했습니다.
+    </p>
+    <div class="chiprow">
+      <a class="chip hl" href="#form1">양식 ① 요약평가서</a>
+      <a class="chip hl" href="#form2">양식 ② 심화평가서</a>
+      <a class="chip hl" href="#form3">양식 ③ 소싱 검토 보고서</a>
+      <a class="chip" href="#calc">🎯 등급 계산기</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 평가 프로세스 ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker">EVALUATION PIPELINE</div>
+    <h2>게임 한 편이 계약까지 가는 길</h2>
+    <p class="lead">개발사가 빌드를 보내오면, 퍼블리셔 내부에서는 대략 이런 단계로 평가가 진행됩니다.</p>
+    <div class="flow mt32 rv">
+      <div class="fstep"><div style="font-size:24px">📥</div><b>소싱 접수</b><span>빌드 · 제안서 수령</span></div>
+      <div class="arr">→</div>
+      <div class="fstep"><div style="font-size:24px">📝</div><b>요약 평가</b><span>양식 ① · 1차 스크리닝</span></div>
+      <div class="arr">→</div>
+      <div class="fstep"><div style="font-size:24px">🔬</div><b>심화 평가</b><span>양식 ② · 항목별 정밀 채점</span></div>
+      <div class="arr">→</div>
+      <div class="fstep"><div style="font-size:24px">🧪</div><b>소싱 검토 보고</b><span>양식 ③ · 테스터 교차 검증</span></div>
+      <div class="arr">→</div>
+      <div class="fstep" style="border-color:rgba(251,191,36,.5)"><div style="font-size:24px">🤝</div><b>계약 협상</b><span>계약금 · MG 조건 협의</span></div>
+    </div>
+
+    <div class="tbl-wrap mt32 rv">
+      <table class="tbl">
+        <tr><th style="width:110px">구분</th><th style="width:190px">상세 액션</th><th>내용</th></tr>
+        <tr><td rowspan="3"><b>게임 분석</b></td><td>게임 소개·기획서 검토</td><td>기획 의도, 세계관, 주요 타깃 및 특징, 예상 일정 확인</td></tr>
+        <tr><td>빌드 수령 후 게임 테스트</td><td>게임 테스트를 통한 인사이트 도출</td></tr>
+        <tr><td>게임 특징 및 USP 정리</td><td>경쟁 요소·차별 요소를 바탕으로 고유의 마케팅 포인트 정리</td></tr>
+        <tr><td rowspan="3"><b>시장 분석</b></td><td>현재 시장 상황 분석</td><td>전체 게임 시장 상황 분석</td></tr>
+        <tr><td>주요 경쟁 게임 분석</td><td>주요 경쟁 게임 지표 및 캠페인 사례 분석</td></tr>
+        <tr><td>마케팅 트렌드 분석</td><td>최신 마케팅 트렌드 및 신규 매체 확인</td></tr>
+        <tr><td rowspan="3"><b>타깃 분석</b></td><td>메인 타깃 분석</td><td>주요 타깃의 특성 파악 (성별, 연령, 중복 실행 게임 및 특징 등)</td></tr>
+        <tr><td>FGT 진행 및 결과 분석</td><td>공통된 주요 의견, 장점 및 단점, 소감 확인</td></tr>
+        <tr><td>CBT 진행 및 결과 분석</td><td>참가자 성별·연령, 잔존율, 레벨 분포 등 공통된 특징 파악</td></tr>
+      </table>
+    </div>
+    <p class="mt8" style="font-size:12.5px;color:var(--tx3)">강의 슬라이드 「게임을 분석할 때 세부 기준」 재구성</p>
+  </div>
+</section>
+
+<!-- ============ 양식 1 ============ -->
+<section id="form1">
+  <div class="wrap">
+    <div class="kicker">FORM ① BASIC</div>
+    <h2>양식 ① — 퍼블리싱 게임평가서 <span style="font-size:16px;color:var(--tx3)">(요약평가서)</span></h2>
+    <p class="lead">모든 평가의 시작. A4 한 장짜리 양식이지만, <b>장점 → 단점 → 시장 가능성 → 개선 요구</b>라는 평가의 뼈대가 전부 들어 있습니다.</p>
+
+    <div class="grid g2 mt32" style="align-items:start">
+      <div class="formdoc rv">
+        <h4>퍼블리싱 게임평가서</h4>
+        <table>
+          <tr><th>게임명</th><td class="blank">평가 대상 게임</td></tr>
+          <tr><th>평가자</th><td class="blank">이름 / 소속</td></tr>
+          <tr><th>평가 단말</th><td class="blank">기종 · OS</td></tr>
+          <tr><th>장점</th><td class="blank">유저 관점에서 확인한 강점</td></tr>
+          <tr><th>단점</th><td class="blank">근거와 함께 기록한 약점</td></tr>
+          <tr><th>총평 (시장 가능성)</th><td class="blank">이 게임이 시장에서 통할 것인가</td></tr>
+          <tr><th>점수 (10점 만점)</th><td class="blank">종합 점수</td></tr>
+          <tr><th>개선 사항</th><td>[필수 개선 사항]<br>[권장 개선 사항]</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="card rv">
+          <h4>이 양식이 말해주는 것</h4>
+          <p class="mt8">
+            ① 평가는 <b style="color:var(--tx)">장점부터</b> 적습니다. 개발사의 창작을 존중하는 태도이자, 게임의 셀링 포인트를 찾는 일이 먼저이기 때문입니다.<br><br>
+            ② 총평의 기준은 재미가 아니라 <b style="color:var(--gold)">"시장 가능성"</b>입니다. 퍼블리셔는 사업자의 눈으로 게임을 봅니다.<br><br>
+            ③ 개선 사항을 <b style="color:var(--cyan)">필수/권장으로 구분</b>합니다. "다 고쳐라"가 아니라, 계약 조건이 될 것과 제안으로 남을 것을 나누는 것입니다.
+          </p>
+        </div>
+        <div class="callout mt16 rv">
+          <div class="tag">TIP FOR YOU</div>
+          <p style="color:var(--tx)">여러분의 게임을 이 양식으로 <b>셀프 평가</b>해 보세요. '장점' 칸이 쉽게 채워지지 않는다면, 퍼블리셔의 첫 관문을 넘기 어렵습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 양식 2 ============ -->
+<section id="form2">
+  <div class="wrap">
+    <div class="kicker">FORM ② DEEP DIVE</div>
+    <h2>양식 ② — 소싱평가서 <span style="font-size:16px;color:var(--tx3)">(심화평가서 · 100점 만점)</span></h2>
+    <p class="lead">본격 검토 단계의 정밀 채점표입니다. 게임을 7개 영역 · 15개 항목으로 쪼개고, 항목마다 배점을 둡니다. <b>배점 그 자체가 퍼블리셔의 가치관</b>입니다.</p>
+
+    <div class="grid g2 mt32" style="align-items:start">
+      <div class="chartbox rv">
+        <h4>영역별 배점 — 무엇을 크게 보는가</h4>
+        <div class="src">소싱평가서 '테스트결과' 시트 배점 기준</div>
+        <canvas id="chWeights"></canvas>
+      </div>
+      <div class="tbl-wrap rv">
+        <table class="tbl">
+          <tr><th>영역</th><th>세부 항목 (배점)</th><th class="num">계</th></tr>
+          <tr><td><b>시스템·콘텐츠</b></td><td>콘텐츠 구성 8 · 전투 완성도 7 · 육성-구조 6 · 육성-정서적 만족 5 · 반복 플레이 5</td><td class="num"><b>31</b></td></tr>
+          <tr><td><b>그래픽</b></td><td>원화 15 · UI 디자인 7 · 모션 및 연출 4</td><td class="num"><b>26</b></td></tr>
+          <tr><td><b>BM</b></td><td>다양성 및 유연성 10 · 확장성 및 기대수명 10</td><td class="num"><b>20</b></td></tr>
+          <tr><td><b>UX</b></td><td>극초반 경험(튜토리얼) 5 · 편의성 및 쾌적도 5</td><td class="num"><b>10</b></td></tr>
+          <tr><td><b>콘셉트·스토리</b></td><td>설정 및 세계관 5 · 스토리텔링 4</td><td class="num"><b>9</b></td></tr>
+          <tr><td><b>안정성</b></td><td>앱 구동 안정성 5</td><td class="num"><b>5</b></td></tr>
+          <tr><td><b>사운드</b></td><td>효과음 2 · BGM 2</td><td class="num"><b>4</b></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout mt24 rv">
+      <div class="tag">배점 읽는 법</div>
+      <p style="color:var(--tx)">
+        시스템·콘텐츠(31) + BM(20) = 절반이 넘습니다. <b>"오래 즐길 수 있고, 매출로 이어지는가"</b>가 최대 관심사라는 뜻입니다.
+        반면 사운드(4)와 스토리텔링(4)은 배점이 작습니다 — 중요하지 않아서가 아니라, <b>계약 판단을 좌우하는 변수가 아니기 때문</b>입니다.
+        원화 하나에 15점(전체 UI의 2배)이 걸려 있다는 것도 눈여겨보세요. 스토어에서 유저를 데려오는 건 결국 첫인상입니다.
+      </p>
+    </div>
+
+    <h3 class="mt48">점수는 등급으로, 등급은 액션으로</h3>
+    <p class="lead">점수는 그 자체로 끝나지 않고, 곰바로 <b>비즈니스 액션</b>으로 번역됩니다.</p>
+    <div class="tbl-wrap mt24 rv">
+      <table class="tbl">
+        <tr><th style="width:90px">등급</th><th style="width:120px">점수 구간</th><th>해석 (액션)</th></tr>
+        <tr><td><span class="bdg s">S</span></td><td class="num">95점 이상</td><td><b>필수 계약</b></td></tr>
+        <tr><td><span class="bdg s">A+</span></td><td class="num">90 ~ 94점</td><td><b>적극 퍼블리싱 대상</b></td></tr>
+        <tr><td><span class="bdg a">A0</span></td><td class="num">85 ~ 89점</td><td>퍼블리싱 대상</td></tr>
+        <tr><td><span class="bdg a">A-</span></td><td class="num">80 ~ 84점</td><td>퍼블리싱 대상이나 조율 필요</td></tr>
+        <tr><td><span class="bdg b">B+</span></td><td class="num">75 ~ 79점</td><td>핵심 관찰 대상</td></tr>
+        <tr><td><span class="bdg b">B0</span></td><td class="num">70 ~ 74점</td><td>관심 대상</td></tr>
+        <tr><td><span class="bdg b">B-</span></td><td class="num">65 ~ 69점</td><td>관심 대상이나 변화가 필요</td></tr>
+        <tr><td><span class="bdg c">C+</span></td><td class="num">60 ~ 64점</td><td>보류 — 추가 정보 수집 후 재심사</td></tr>
+        <tr><td><span class="bdg c">C0</span></td><td class="num">55 ~ 59점</td><td>드랍 — 추후 신청 시 재심사 가능</td></tr>
+        <tr><td><span class="bdg c">C-</span></td><td class="num">55점 미만</td><td>드랍 — 재심사 없음</td></tr>
+      </table>
+    </div>
+
+    <!-- 등급 계산기 -->
+    <div class="demo mt24 rv" id="calc">
+      <h4 style="font-size:16px">🎯 내 게임이 78점이라면? — 등급 계산기</h4>
+      <p style="font-size:13.5px;color:var(--tx3);margin-top:4px">슬라이더를 움직여 보세요. 실제 등급표 기준으로 판정합니다.</p>
+      <div style="display:flex;gap:22px;align-items:center;margin-top:18px;flex-wrap:wrap">
+        <div style="flex:1;min-width:220px">
+          <input type="range" class="range" id="scoreRange" min="0" max="100" value="78" step="0.25">
+        </div>
+        <div style="text-align:center;min-width:190px">
+          <div class="scoreview"><span id="scoreVal">78</span><span style="font-size:20px;color:var(--tx3)">점</span></div>
+          <div id="gradeBadge" class="bdg b" style="font-size:15px;padding:5px 14px;margin-top:4px">B+</div>
+          <div id="gradeDesc" style="font-size:13px;color:var(--tx2);margin-top:8px">핵심 관찰 대상</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="mt48">실제 평가 사례 — 총점 78.25점</h3>
+    <p class="lead">이 양식으로 실제 평가된 어느 방치형 RPG의 기록 일부를 발췌했습니다. 점수 옆의 코멘트가 진짜 평가입니다.</p>
+    <div class="grid g2 mt24">
+      <div class="card rv">
+        <div style="display:flex;justify-content:space-between;align-items:center"><h4>원화</h4><span class="bdg a">12.5 / 15</span></div>
+        <p class="mt8">"매력적이고 독특한 미국풍 그림체 — 브롤스타즈 느낌. 원화가 통일돼 있어 어수선하지 않음."<br><span style="color:var(--tx3)">단점: "독특한 그림체라 호불호는 갈릴 것으로 보임."</span></p>
+      </div>
+      <div class="card rv">
+        <div style="display:flex;justify-content:space-between;align-items:center"><h4>UI 디자인</h4><span class="bdg b">4.5 / 7</span></div>
+        <p class="mt8">"간결하고 통일된 UI로 그림체와 잘 맞음."<br><span style="color:var(--tx3)">단점: "폰트가 구시대적이고 딱딱함. 일부 버튼 위치·직관성 아쉬움."</span></p>
+      </div>
+      <div class="card rv">
+        <div style="display:flex;justify-content:space-between;align-items:center"><h4>육성 - 구조</h4><span class="bdg a">5 / 6</span></div>
+        <p class="mt8">"장비·승급·각성·초월 등 육성 콘텐츠가 다양하고 습득이 쉬움."<br><span style="color:var(--tx3)">단점: "초반 재화 수급 속도가 느려 진행이 막힘 — 밸런스 조정 필요."</span></p>
+      </div>
+      <div class="card rv">
+        <div style="display:flex;justify-content:space-between;align-items:center"><h4>BM - 확장성</h4><span class="bdg a">8 / 10</span></div>
+        <p class="mt8">"다양한 육성 요소로 성장 재미를 오래 끌 수 있고 추가 시스템 확장까지 기대."<br><span style="color:var(--tx3)">단점: "신규 캐릭터 과금 스트레스 우려 — 이벤트·운영 보완 필요."</span></p>
+      </div>
+    </div>
+    <div class="callout mt24 rv">
+      <div class="tag">평가 코멘트의 문법</div>
+      <p style="color:var(--tx)">모든 항목이 <b>장점 → 단점 → 개선 방향</b> 순서로 적혀 있고, 단정 대신 "~로 보임", "~필요"의 제안형 문장을 씁니다. 평가서는 개발사에게 전달될 수 있는 문서이기 때문입니다. <b>지적은 근거로, 결론은 제안으로.</b></p>
+    </div>
+
+    <h3 class="mt48">게임성 정밀 진단 — 5대 지표</h3>
+    <p class="lead">심화평가서에는 게임성만 다시 5개 지표 · 80여 개 세부 항목으로 쪼개는 시트가 따로 있습니다.</p>
+    <div class="grid g2 mt24" style="align-items:start">
+      <div class="chartbox rv">
+        <h4>실제 평가 사례 — 게임성 5대 지표</h4>
+        <div class="src">항목별 0~10점, 세부 항목 평균값</div>
+        <canvas id="chRadar"></canvas>
+      </div>
+      <div>
+        <div class="tbl-wrap rv">
+          <table class="tbl">
+            <tr><th>지표</th><th>무엇을 보는가</th></tr>
+            <tr><td><b>호감도</b></td><td>핵심 시스템 · 원화와 캐릭터 · 콘셉트 · 스토리 · 모션과 연출 · UI 품질</td></tr>
+            <tr><td><b>접근성</b></td><td>조작 · 튜토리얼 · UI 구조 · 편의성 · 초반 경험 · 도움말 · 이벤트 기반</td></tr>
+            <tr><td><b>몰입성</b></td><td>전투 방식 · 플레이 동선 · 콘텐츠 연계성 · 기대심리 · 도전/경쟁 의식 · 수집 만족감</td></tr>
+            <tr><td><b>지속성</b></td><td>캐릭터·재화·보상 밸런스 · PvE/PvP 밸런스 · 장기 운영 가능성</td></tr>
+            <tr><td><b>유료화</b></td><td>뽑기 · 천장 구조 · 성장 재료 · 꾸미기 · 패키지 상품 · 행동력</td></tr>
+          </table>
+        </div>
+        <div class="card mt16 rv">
+          <h4>실제 코멘트 발췌</h4>
+          <p class="mt8" style="font-size:13.5px">
+            · 튜토리얼 <b class="bdg c" style="margin:0 4px">1점</b> "불필요하게 길어 몰입이 어려움. 대폭 경량화 필요"<br><br>
+            · 수집 만족감 <b class="bdg c" style="margin:0 4px">1점</b> "많이 모으고 극도로 육성한 것을 과시할 공간이 부족"<br><br>
+            · 파편(천장) 시스템 <b class="bdg s" style="margin:0 4px">10점</b> "천장과 밑 빠진 독 역할을 모두 기대할 수 있는 구조"
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="mt48">장르마다 '봐야 할 재미'가 다르다</h3>
+    <p class="lead">평가 시트 한켠에 적혀 있는 기준 — 장르별로 게임성의 초점이 달라집니다.</p>
+    <div class="grid g4 mt24">
+      <div class="card rv"><h4>RPG</h4><p>성장 · 역할 수행</p></div>
+      <div class="card rv"><h4>레이싱</h4><p>속도감 · 경쟁</p></div>
+      <div class="card rv"><h4>아케이드 액션</h4><p>긴장감 · 조작감</p></div>
+      <div class="card rv"><h4>슈팅</h4><p>기동감 · 조작감</p></div>
+      <div class="card rv"><h4>FPS</h4><p>타격감 · 전략성</p></div>
+      <div class="card rv"><h4>어드벤처</h4><p>탐험 감각 · 발견</p></div>
+      <div class="card rv"><h4>리듬</h4><p>리듬감 · 조작감</p></div>
+      <div class="card rv"><h4>퍼즐</h4><p>논리성 · 직관성</p></div>
+      <div class="card rv"><h4>파티</h4><p>다양성 · 조화</p></div>
+      <div class="card rv"><h4>시뮬레이션</h4><p>체감도 · 사실성</p></div>
+      <div class="card rv"><h4>커뮤니티</h4><p>소통 · 공유</p></div>
+      <div class="card rv" style="border-style:dashed"><h4 style="color:var(--tx3)">내 게임은?</h4><p style="color:var(--tx3)">핵심 재미 두 단어를 적을 수 있어야 합니다</p></div>
+    </div>
+
+    <h3 class="mt48">게임 밖도 평가한다 — 개발력 · 시장성</h3>
+    <p class="lead">퍼블리셔는 게임만 보지 않습니다. <b>이 팀이 끝까지 만들 수 있는가</b>, <b>이 시장이 존재하는가</b>도 채점 대상입니다.</p>
+    <div class="grid g2 mt24" style="align-items:start">
+      <div class="card rv">
+        <div style="display:flex;justify-content:space-between;align-items:center"><h4>개발력 체크리스트</h4><span class="bdg a">사례: 8.5 / 10</span></div>
+        <div class="tbl-wrap mt16"><table class="tbl" style="font-size:13px">
+          <tr><th>영역</th><th>체크 문항 (각 0/1 체크)</th></tr>
+          <tr><td><b>회사 안정성</b></td><td>수익원·투자 존재 / 공개 기업 여부 / 연혁 5년 이상 / 대표 경영 경험 5년 이상 / 최근 6개월 인원 변동 없음</td></tr>
+          <tr><td><b>이전 개발작</b></td><td>완성작 존재 / 상용화 서비스 경험 / 현재 매출 게임 보유 / 해외 서비스 경험 / 전문 장르 보유</td></tr>
+          <tr><td><b>개발 완성도</b></td><td>핵심 플레이의 재미 구현 / 마일스톤 요소 완성 / 목표 초과 구현 / 요소 간 유기적 관계 / 콘텐츠 추가 용이성</td></tr>
+          <tr><td><b>개발진 신뢰성</b></td><td>디렉터의 완성 경험 / 파트장들의 완성 경험 / 동일 장르 경험자 존재 / 충분한 개발 인원 / 초기 구성원 유지</td></tr>
+        </table></div>
+      </div>
+      <div class="card rv">
+        <div style="display:flex;justify-content:space-between;align-items:center"><h4>시장성 평가 4항목</h4><span class="bdg a">사례: 7.6 / 10</span></div>
+        <div class="tbl-wrap mt16"><table class="tbl" style="font-size:13px">
+          <tr><td><b>시장 규모</b></td><td>장르 시장의 성장 추이 — "최근 4년 방치형 RPG는 지속 성장 중"</td></tr>
+          <tr><td><b>고객 적합성</b></td><td>장르 유저가 선호하는 키워드와의 일치 — "무과금 · 중독성 · 귀여움"</td></tr>
+          <tr><td><b>경쟁·대체 강도</b></td><td>경쟁작 대비 우열 — "퀄리티는 낮지만 투자 대비 가성비 양호"</td></tr>
+          <tr><td><b>수익성</b></td><td>BM 구축 시 기대 매출 — "동장르 흥행작은 9개월간 684억 수익 사례"</td></tr>
+        </table></div>
+        <div class="callout mt16" style="padding:14px 18px">
+          <p style="font-size:13px;color:var(--tx)"><b>특징:</b> 모든 판단에 데이터 출처(시장 리포트 · 마켓 데이터 · 기사 링크)를 함께 적습니다. <b>감이 아니라 근거로 평가합니다.</b></p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="mt48">숫자로 미리 해보는 서비스 — 예상 매출 시뮬레이션</h3>
+    <p class="lead">심화평가서의 백미입니다. 계약 전에 12개월 서비스를 스프레드시트 위에서 먼저 돌려 봅니다.</p>
+
+    <div class="grid g3 mt24">
+      <div class="card rv" style="text-align:center"><p style="font-size:12.5px">예상 총매출</p><div class="big accent">19억</div><p style="font-size:12px;color:var(--tx3)">12개월 누적</p></div>
+      <div class="card rv" style="text-align:center"><p style="font-size:12.5px">마케팅 비용</p><div class="big" style="color:var(--gold)">5억</div><p style="font-size:12px;color:var(--tx3)">CPI 5,000원 가정</p></div>
+      <div class="card rv" style="text-align:center"><p style="font-size:12.5px">예상 영업이익</p><div class="big" style="color:var(--green)">1.7억</div><p style="font-size:12px;color:var(--tx3)">BEP 3개월차 도달</p></div>
+    </div>
+
+    <div class="chartbox mt16 rv">
+      <h4>월별 매출과 누적 영업이익 (단위: 억 원)</h4>
+      <div class="src">실제 소싱평가서 '예상매출(노먀 시나리오)' 시트 — 총 다운로드 13만 · 전환율/잔존율/과금률 가정 기반</div>
+      <canvas id="chRevenue"></canvas>
+    </div>
+
+    <div class="grid g4 mt16">
+      <div class="card rv"><h4 style="color:var(--cyan)">CPI</h4><p style="font-size:13px">설치 1건을 사 오는 데 드는 광고비. 사례 가정: <b>5,000원</b></p></div>
+      <div class="card rv"><h4 style="color:var(--cyan)">PU율</h4><p style="font-size:13px">전체 유저 중 결제 유저 비율. 사례 첫 달: <b>4.6%</b></p></div>
+      <div class="card rv"><h4 style="color:var(--cyan)">ARPPU</h4><p style="font-size:13px">결제 유저 1인당 월 평균 결제액. 사례 첫 달: <b>46,000원</b></p></div>
+      <div class="card rv"><h4 style="color:var(--cyan)">잔존율</h4><p style="font-size:13px">유저가 남아 있는 비율. 사례 가정: <b>38%</b></p></div>
+    </div>
+
+    <div class="callout warn mt24 rv">
+      <div class="tag">왜 이렇게까지 하나</div>
+      <p style="color:var(--tx)">
+        소싱 개요에 이렇게 적혀 있었습니다 — 전략: <b>"Low risk, Low return"</b>, 계약금 1억 (MG 1.5억) 협의.
+        계약금과 마케팅비는 실제 돈입니다. <b>재미있다는 감상만으로는 억 단위 투자를 결정할 수 없기 때문에</b>, 퍼블리셔는 매출을 먼저 시뮬레이션합니다.
+        지망생 여러분이 만들 게임도 언젠가 이 스프레드시트 위에 올라갑니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 양식 3 ============ -->
+<section id="form3">
+  <div class="wrap">
+    <div class="kicker">FORM ③ CROSS-CHECK</div>
+    <h2>양식 ③ — 소싱 검토 보고서 <span style="font-size:16px;color:var(--tx3)">(테스터 교차 평가)</span></h2>
+    <p class="lead">마지막 관문입니다. 테스터 4인(해외 테스터 포함)이 같은 빌드를 각자 플레이하고 <b>4개 영역을 교차 채점</b>합니다. 기준선은 명확합니다 — <b style="color:var(--gold)">70점 이상이어야 다음 프로세스로.</b></p>
+
+    <div class="grid g2 mt32" style="align-items:start">
+      <div class="chartbox rv">
+        <h4>실제 사례 — 어느 시뮬레이션 게임의 성적표</h4>
+        <div class="src">테스터 4인 평균, 100점 만점 · 기준선 70점</div>
+        <canvas id="chSourcing"></canvas>
+      </div>
+      <div>
+        <div class="card rv" style="border-color:rgba(248,113,113,.4)">
+          <div style="display:flex;justify-content:space-between;align-items:center"><h4>판정 결과</h4><span class="bdg c" style="font-size:14px">총점 38.2 — 드랍</span></div>
+          <p class="mt8">유명 IP 기반 게임이었지만, 테스트 빌드의 완성도가 낮아 통과선(70점)에 크게 못 미쳤습니다. 테스터 코멘트 발췌 —</p>
+          <p class="mt16" style="font-size:13.5px">
+            <b style="color:var(--tx)">[시스템]</b> "탐험·연애·장비 등 핵심 콘텐츠 미완성. 난이도 조절 요소 부재로 루틴이 단조로움"<br><br>
+            <b style="color:var(--tx)">[튜토리얼]</b> "메인 화면 UI만 설명 — 가이드 흐름이 절반만 구현된 느낌"<br><br>
+            <b style="color:var(--tx)">[완성도]</b> "현재 개발 완성도는 약 15% 수준으로 보임 (해외 테스터)"
+          </p>
+        </div>
+        <div class="card mt16 rv">
+          <h4>그런데 — 드랍 보고서에도 '제안'이 있다</h4>
+          <p class="mt8" style="font-size:13.5px">
+            <b style="color:var(--tx)">[시장성]</b> "오래된 유명 IP로 인지도 높음. 시리즈 상징 콘텐츠가 포함된다면 구매 의향을 끌어올릴 수 있을 것"<br><br>
+            <b style="color:var(--tx)">[BM]</b> "Buy-to-Play 구조는 수익이 한정적 → 의상·외전 시나리오·시즐 이벤트·BGM 팩 등 유료 DLC 제안"<br><br>
+            <b style="color:var(--tx)">[종합]</b> "완성도 70~80% 이상 확보 후 재테스트 시 평가 향상 가능"
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap mt24 rv">
+      <table class="tbl">
+        <tr><th style="width:150px">평가 영역</th><th>세부 항목</th></tr>
+        <tr><td><b>그래픽 · UI</b></td><td>전반 퀄리티 · 분위기와 세계관 · 캐릭터 매력 · 배경 매력 · 몬스터/NPC 매력 · 사양 확장성 · 연출</td></tr>
+        <tr><td><b>시스템 (콘텐츠)</b></td><td>특징적 시스템 · 안정성(버그) · 세계관 · 캐릭터 개성 · 성장 시스템 · 수집 재미 · 전투/협력 요소 · 사운드</td></tr>
+        <tr><td><b>조작성 (편의성)</b></td><td>튜토리얼·도움말 충실도 · UI 편의성 · 조작 편의성 · 응답 정확성 · 랙/동기화 · 조작 상쾌감</td></tr>
+        <tr><td><b>시장성</b></td><td>경쟁작 대비 특징 · 마케팅 포인트 · 기존 성과 · 장르 최신 동향 · 매출 발생 가능성 · BM 다양성 · 게임성과의 균형</td></tr>
+      </table>
+    </div>
+    <p class="mt8" style="font-size:12.5px;color:var(--tx3)">+ 영역별 Comment와 별도의 Total Opinion(그래픽/시스템/튜토리얼/시장성/BM/종합)을 서술형으로 작성</p>
+
+    <h3 class="mt48">참고 — 같은 잣대로 매겨 온 실제 점수들</h3>
+    <p class="lead">동일한 4개 영역 기준으로 평가·서비스해 온 게임들의 내부 평가 점수 기록입니다. <b>90점대가 얼마나 드문지</b> 보세요.</p>
+    <div class="chartbox mt24 rv">
+      <h4>퍼블리싱 평가 점수 사례 (종합점, 100점 만점)</h4>
+      <div class="src">소싱 검토 보고서 내 과거 평가 기록 시트</div>
+      <canvas id="chGames" style="max-height:520px"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 정리 ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker">SUMMARY</div>
+    <h2>PART 3 정리 — 평가자의 눈</h2>
+    <div class="grid g2 mt24">
+      <div class="card rv">
+        <h4>퍼블리셔가 게임을 보는 4개의 렌즈</h4>
+        <div class="chiprow mt8">
+          <span class="chip hl">게임성 — 재미의 구조</span>
+          <span class="chip hl">시장성 — 시장과 타깃의 존재</span>
+          <span class="chip hl">BM — 매출로 이어지는 설계</span>
+          <span class="chip hl">개발력 — 끝까지 만들 수 있는 팀</span>
+        </div>
+        <p class="mt16">네 가지 중 <b style="color:var(--tx)">하나라도 비면 계약은 어려워집니다.</b> 반대로 말하면, 이 네 칸이 여러분이 게임을 기획할 때 미리 채워 둠야 할 칸입니다.</p>
+      </div>
+      <div class="card rv">
+        <h4>지망생을 위한 체크 세 가지</h4>
+        <p class="mt8">
+          ① 내 게임의 <b style="color:var(--cyan)">장점 3줄</b>을 남의 언어(평가서의 언어)로 쓸 수 있는가<br><br>
+          ② 내 게임의 장르 <b style="color:var(--cyan)">핵심 재미 두 단어</b>를 말할 수 있는가<br><br>
+          ③ 내 게임이 <b style="color:var(--cyan)">어떻게 돈을 벌지</b> 한 문단으로 설명할 수 있는가
+        </p>
+      </div>
+    </div>
+
+    <div class="quoteband rv">
+      <div class="q">평가는 게임을 깎아내리는 일이 아니라,<br><span class="accent">가능성을 숫자로 번역하는 일</span>입니다</div>
+      <div class="by">— PART 3을 마치며</div>
+    </div>
+
+    <div class="pager">
+      <a href="part2.html"><div class="dir">← PREV</div><div class="ttl">PART 2 · 게임의 구성요소</div></a>
+      <a href="index.html" class="next"><div class="dir">HOME</div><div class="ttl">처음으로 돌아가기</div></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-brand">가히 <b>gahee</b> · 게임 분석과 평가 특강</div>
+    <p>본 페이지의 평가양식·데이터는 실무에서 사용된 문서에서 발췌·재구성한 교육 자료이며, 개별 게임·회사를 평가하려는 목적이 아닙니다.<br>기재된 수치는 특정 시점의 내부 기록으로 현재와 다를 수 있습니다.</p>
+  </div>
+</footer>
+
+<script>
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// grade calculator
+const gr=[[95,'S','필수 계약','s'],[90,'A+','적극 퍼블리싱 대상','s'],[85,'A0','퍼블리싱 대상','a'],[80,'A-','퍼블리싱 대상이나 조율 필요','a'],[75,'B+','핵심 관찰 대상','b'],[70,'B0','관심 대상','b'],[65,'B-','관심 대상이나 변화가 필요','b'],[60,'C+','보류 — 추가 정보 수집 후 재심사','c'],[55,'C0','드랍 — 추후 신청 시 재심사 가능','c'],[-1,'C- 이하','드랍 — 재심사 없음','c']];
+const rangeEl=document.getElementById('scoreRange'),sv=document.getElementById('scoreVal'),gb=document.getElementById('gradeBadge'),gd=document.getElementById('gradeDesc');
+function updGrade(){
+  const v=parseFloat(rangeEl.value);sv.textContent=v%1?v.toFixed(2):v;
+  const g=gr.find(x=>v>=x[0]);
+  gb.textContent=g[1];gb.className='bdg '+g[3];gd.textContent=g[2];
+}
+rangeEl.addEventListener('input',updGrade);updGrade();
+
+// ---- charts ----
+Chart.defaults.color='#a7b0c3';
+Chart.defaults.font.family="'Pretendard Variable',Pretendard,sans-serif";
+Chart.defaults.borderColor='rgba(148,163,184,.12)';
+
+// weights
+new Chart(document.getElementById('chWeights'),{
+  type:'bar',
+  data:{labels:['시스템·콘텐츠','그래픽','BM','UX','콘셉트·스토리','안정성','사운드'],
+    datasets:[{data:[31,26,20,10,9,5,4],
+      backgroundColor:['#22d3ee','#38bdf8','#8b5cf6','#a78bfa','#c4b5fd','#64748b','#475569'],borderRadius:8}]},
+  options:{indexAxis:'y',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.x}점 / 100점`}}},
+    scales:{x:{max:35,grid:{color:'rgba(148,163,184,.08)'}},y:{grid:{display:false}}}}
+});
+
+// radar
+new Chart(document.getElementById('chRadar'),{
+  type:'radar',
+  data:{labels:['호감도','접근성','몰입성','지속성','유료화'],
+    datasets:[{label:'평가 사례',data:[4.8,5.4,6.5,6.3,7.6],
+      backgroundColor:'rgba(139,92,246,.22)',borderColor:'#8b5cf6',borderWidth:2,
+      pointBackgroundColor:'#22d3ee',pointRadius:4}]},
+  options:{plugins:{legend:{display:false}},
+    scales:{r:{min:0,max:10,ticks:{stepSize:2,backdropColor:'transparent'},grid:{color:'rgba(148,163,184,.15)'},angleLines:{color:'rgba(148,163,184,.15)'},pointLabels:{font:{size:13,weight:700}}}}}
+});
+
+// revenue
+const rev=[908460000,435060000,213156000,141690000,90216000,60210000,32190000,22920000,16440000,11910000,8700000,6450000].map(v=>+(v/1e8).toFixed(2));
+const profit=[-235223000,-54124000,32306000,88142000,122059000,142785000,153385000,160795000,165748000,169111000,170972000,171771000].map(v=>+(v/1e8).toFixed(2));
+new Chart(document.getElementById('chRevenue'),{
+  data:{labels:['1M','2M','3M','4M','5M','6M','7M','8M','9M','10M','11M','12M'],
+    datasets:[
+      {type:'bar',label:'월 매출',data:rev,backgroundColor:'rgba(34,211,238,.55)',borderRadius:6},
+      {type:'line',label:'누적 영업이익',data:profit,borderColor:'#fbbf24',backgroundColor:'#fbbf24',borderWidth:2.5,pointRadius:3.5,tension:.3}
+    ]},
+  options:{plugins:{legend:{labels:{boxWidth:12}},tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${c.parsed.y}억`}}},
+    scales:{y:{grid:{color:'rgba(148,163,184,.08)'},title:{display:true,text:'억 원'}},x:{grid:{display:false}}}}
+});
+
+// sourcing case
+new Chart(document.getElementById('chSourcing'),{
+  type:'bar',
+  data:{labels:['그래픽·UI','시스템(콘텐츠)','조작성(편의성)','시장성','총점'],
+    datasets:[{data:[37.3,42.4,28.5,44.5,38.2],
+      backgroundColor:['rgba(248,113,113,.6)','rgba(248,113,113,.6)','rgba(248,113,113,.6)','rgba(248,113,113,.6)','#f87171'],borderRadius:8}]},
+  options:{plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.y}점 (통과선 70점)`}}},
+    scales:{y:{max:100,grid:{color:'rgba(148,163,184,.08)'}},x:{grid:{display:false}}}},
+  plugins:[{id:'cutline',afterDatasetsDraw(ch){
+    const {ctx,chartArea:{left,right},scales:{y}}=ch;const yv=y.getPixelForValue(70);
+    ctx.save();ctx.strokeStyle='#fbbf24';ctx.setLineDash([7,5]);ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(left,yv);ctx.lineTo(right,yv);ctx.stroke();
+    ctx.fillStyle='#fbbf24';ctx.font='700 12px Pretendard';ctx.fillText('통과선 70점',left+8,yv-8);ctx.restore();
+  }}]
+});
+
+// real games
+const games=[['TERA',93],['Audition M',90],['Audition',89.5],['Closers',86.25],['I love burger',84.75],['Arpiel',83],['LaTale',83],['십이지천M',82.5],['God of Highschool',81.5],['Kritika',81.5],['열혈강호',80],['Road of Hero',80],['SF2',79.25],['AIKA',77.5],['십이지천2',75],['CPMW',74.75],['Azera',71.5]];
+new Chart(document.getElementById('chGames'),{
+  type:'bar',
+  data:{labels:games.map(g=>g[0]),
+    datasets:[{data:games.map(g=>g[1]),
+      backgroundColor:games.map(g=>g[1]>=90?'#22d3ee':g[1]>=85?'#38bdf8':g[1]>=80?'#8b5cf6':g[1]>=75?'#a78bfa':'#64748b'),borderRadius:6}]},
+  options:{indexAxis:'y',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.x}점`}}},
+    scales:{x:{min:60,max:100,grid:{color:'rgba(148,163,184,.08)'}},y:{grid:{display:false},ticks:{font:{size:12}}}}}
+});
+</script>
+</body>
+</html>
